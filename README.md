@@ -825,3 +825,41 @@ on writing amazing applications and less on mundane tasks.
     >
     > VS Marketplace Link:
     > [[https://marketplace.visualstudio.com/items?itemName=robert-brunhage.flutter-riverpod-snippets]](https://marketplace.visualstudio.com/items?itemName=robert-brunhage.flutter-riverpod-snippets)
+
+**SOLID Folder Structure:**
+
+     └── lib
+         ├── app
+         |   ├── core (all core setups)
+         |   |   ├── api_paths
+         |   |   ├── constants
+         |   |   ├── dio_provider (dio setup)
+         |   |   └── share_preference_provider (shared preference steam setup)
+         |   |
+         │   ├── features (folders by feature Ex: auth, profile, home etc.)
+         |   |   ├── data (data management)
+         |   |   |   ├── data_source (Get data depending on soruce)
+         |   |   |   ├── model (if any model needed for data)
+         |   |   |   └── repositories (Implementation of abstruct class which will
+         |   |   |         return data using data source)
+         |   |   |
+         |   |   ├── domain (manage structures)
+         |   |   |   ├── entities (All entities model that needed for retreaving data)
+         |   |   |   ├── repositories (abstruct class for repositories)
+         |   |   |   └── usecases (indevisual implementation of each functionality
+         |   |   |         of repository which will be used to get data using providers)
+         |   |   |
+         |   |   └── presentation (screens and state managements)
+         |   |       ├── providers (state management folder)
+         |   |       ├── screens (All views included is feature)
+         |   |       └── widgets (widgets for features)
+         |   |
+         │   ├── localization (LOcalization Setup)
+         │   ├── routes (Routing setup)
+         │   └── shared (global setups)
+         |
+         └── config
+             ├── app_configs
+             └── firebase_otpions
+
+   
