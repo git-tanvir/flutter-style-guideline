@@ -36,13 +36,13 @@
 2.  Libraries, packages, directories, and source files name should be in
     snake_case(lowercase_with_underscores)
     
- **# Bad**
+**# Bad**
 
      mypackage    
      └─ lib
          └─ bottom-nav.dart
 
- **# Good**
+**# Good**
 
      my_package
      └─ lib
@@ -117,28 +117,28 @@
 
 1.  **?? (if null) operator:**
     
-    **# Bad**
+**# Bad**
 
-         String? name;
+     String? name;
         
-         name= name==null? "": name;
+     name= name==null? "": name;
 
  **# Good**
 
-         String? name;   
-         name= name ?? "";
+     String? name;   
+     name= name ?? "";
 
 2.  **?. (null aware) operator:**
     
-    **# Bad**
+**# Bad**
 
-         String? name;
-         name= name==null? null: name.length.toString();
+     String? name;
+     name= name==null? null: name.length.toString();
  
  **# Good**
 
-         String? name;  
-         name=name?.length.toString();
+     String? name;  
+     name=name?.length.toString();
 
 3.  **Prefer is Operator Over as for Safer Type Checking:**
 
@@ -149,13 +149,13 @@
     
 **# Bad**
 
-         (person as Person).name="Ashish";
+     (person as Person).name="Ashish";
     
 **# Good**
     
-         if(person is Person){
-          person.name="Ashish";
-         }
+     if(person is Person){
+     person.name="Ashish";
+     }
 
 
 4.  **Avoid the unnecessary creation of lambdas
@@ -170,7 +170,7 @@
     }
 
      
-   **# Good**
+**# Good**
    
     void main(){
     List<int> oddNumber=[1,3,4,5,6,7,9,11];
@@ -182,7 +182,7 @@
 
  Utilizing spread collections simplifies the code when you already have existing items stored in another collection.
 
- **# Bad**
+**# Bad**
 
      List<int> firstFiveOddNumber=[1,3,5,7,9];   
      List<int> secondFiveOddNumber=[11,13,15,17,19];   
@@ -324,14 +324,14 @@ options and prevent log line discarding in certain situations.
 3.  Try to make code reusable with the help of helper functions in
     utility files saved in the utils folder.
     
-    # utils.dart
+   # utils.dart
 
-        import 'package:intl/intl.dart';
+     import 'package:intl/intl.dart';
         
-        String formatDateTime(DateTime dateTime) {
-         final formatter = DateFormat('yyyy-MM-dd HH:mm:ss');
-         return formatter.format(dateTime);
-        }
+     String formatDateTime(DateTime dateTime) {
+     final formatter = DateFormat('yyyy-MM-dd HH:mm:ss');
+     return formatter.format(dateTime);
+     }
 
 
 4.  Widgets should also be designed to be reusable and can be saved in a
@@ -553,7 +553,7 @@ options and prevent log line discarding in certain situations.
 
 1.  **DO avoid relative imports for files in lib. Use package imports.**
     
-    **# Bad**
+**# Bad**
 
      import 'widgets/text_input.dart';
      import 'widgets/button.dart';
@@ -569,12 +569,12 @@ options and prevent log line discarding in certain situations.
 
 3.  **Avoid print statements. Use debugPrint or Logger instead**\
     
-    **# Bad**
+   **# Bad**
 
-          void f(int x) {
-           print('debug: $x');
-           ...
-          }
+     void f(int x) {
+      print('debug: $x');
+      ...
+      }
 
 
  # Good
