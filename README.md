@@ -829,7 +829,7 @@ on writing amazing applications and less on mundane tasks.
     > VS Marketplace Link:
     > [[https://marketplace.visualstudio.com/items?itemName=robert-brunhage.flutter-riverpod-snippets]](https://marketplace.visualstudio.com/items?itemName=robert-brunhage.flutter-riverpod-snippets)
 
-##**19. SOLID Folder Structure:**
+## **19. SOLID Folder Structure:**
 
      └── lib
          ├── app
