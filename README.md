@@ -571,10 +571,10 @@ options and prevent log line discarding in certain situations.
     
     **# Bad**
 
-     void f(int x) {
-      print('debug: $x');
-      ...
-     }
+          void f(int x) {
+           print('debug: $x');
+           ...
+          }
 
 
  # Good
