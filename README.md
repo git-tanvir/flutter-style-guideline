@@ -1,8 +1,8 @@
 # flutter-style-guideline
 
-## ** Naming convention:**
+## ** 1. Naming convention:**
 
-1.  **Classes, enums, typedefs, mixin, and extensions name should in UpperCamelCase**
+a.  **Classes, enums, typedefs, mixin, and extensions name should in UpperCamelCase**
 
 **# Bad**
 
@@ -33,7 +33,7 @@
     
      typedef FunctionName = void Function();
 
-2.  Libraries, packages, directories, and source files name should be in
+b.  Libraries, packages, directories, and source files name should be in
     snake_case(lowercase_with_underscores)
     
 **# Bad**
@@ -48,7 +48,7 @@
      └─ lib
          └─ bottom_nav.dart
 
-3.  **Name imports prefixes should be in
+c.  **Name imports prefixes should be in
     snake_case(lower_with_underscores)**
     
 **# Bad**
@@ -59,7 +59,7 @@
 
      import 'package:dio/dio.dart' as dio;
 
-4. **Variables, constants, parameters, and named parameters should be
+d. **Variables, constants, parameters, and named parameters should be
     in lowerCamelCase.**
     
 **# Bad**
@@ -94,7 +94,7 @@
     }
 
 
-5. **Proper meaningful names should be followed.**
+e. **Proper meaningful names should be followed.**
     
  **# Bad**
     
@@ -106,7 +106,7 @@
     Color backgroundColor;
     int calculateAge(Date dob);
 
-6. **Private variable names are preceded with underscores.**
+f. **Private variable names are preceded with underscores.**
 
        class ClassName {
         String _variableName;
@@ -115,9 +115,9 @@
 
 
 
-## **Use Nullable operators:**
+## **2. Use Nullable operators:**
 
-1.  **?? (if null) operator:**
+a.  **?? (if null) operator:**
     
 **# Bad**
 
@@ -130,7 +130,7 @@
      String? name;   
      name= name ?? "";
 
-2.  **?. (null aware) operator:**
+b.  **?. (null aware) operator:**
     
 **# Bad**
 
@@ -142,7 +142,7 @@
      String? name;  
      name=name?.length.toString();
 
-3.  **Prefer is Operator Over as for Safer Type Checking:**
+c.  **Prefer is Operator Over as for Safer Type Checking:**
 
     To prevent potential exceptions, it is recommended to utilize the is
     operator instead of the as cast operator in Flutter. The is operator
@@ -160,7 +160,7 @@
      }
 
 
-4.  **Avoid the unnecessary creation of lambdas
+d.  **Avoid the unnecessary creation of lambdas
 
 **# Bad**
 
@@ -180,7 +180,7 @@
     }
 
 
-## **Simplify Your Code with Spread Collection**
+## **3. Simplify Your Code with Spread Collection**
 
  Utilizing spread collections simplifies the code when you already have existing items stored in another collection.
 
@@ -195,7 +195,8 @@
      List<int> secondFiveOddNumber=[11,13,15,17,19];    
      List<int> firstFiveOddNumber=[1,3,5,7,9,...secondFiveOddNumber];
 
-## **Simplify Object Operations with the Cascades Operation**
+
+## **4. Simplify Object Operations with the Cascades Operation**
 
 The Cascades (..) operator is ideal for executing a series of operations
 on the same object, enabling a more concise and readable code.
@@ -238,7 +239,7 @@ on the same object, enabling a more concise and readable code.
 
 
 
-**Optimal Widget Rendering in Row and Column Using if Conditions**
+## **5. Optimal Widget Rendering in Row and Column Using if Conditions**
 
 **# Bad**
 
@@ -267,7 +268,7 @@ on the same object, enabling a more concise and readable code.
      ),
 
 
-## **Use arrow function(() =>)**
+## **6. Use arrow function(() =>)**
 
 If a function has only a single statement, use the () => arrow function.
 
@@ -284,7 +285,7 @@ If a function has only a single statement, use the () => arrow function.
      weight_in_kg / (height_in_meter * height_in_meter);
 
     
-## **Remove any print statements, unused and commented code:**
+## **7. Remove any print statements, unused and commented code:**
 
 To improve production code, it is important to remove print statements
 used for debugging and logging. Eliminating unused code enhances
@@ -315,18 +316,18 @@ options and prevent log line discarding in certain situations.
     }
 
 
-## **Proper folder structure**
+## **8. Proper folder structure**
 
-1.  Segregation of code into a proper folder structure depending on
+a.  Segregation of code into a proper folder structure depending on
     architecture.
 
-2.  The code is formatted correctly with trailing commas used
+b.  The code is formatted correctly with trailing commas used
     appropriately.
 
-3.  Try to make code reusable with the help of helper functions in
+c.  Try to make code reusable with the help of helper functions in
     utility files saved in the utils folder.
     
- # utils.dart
+  utils.dart
 
      import 'package:intl/intl.dart';
         
@@ -336,10 +337,10 @@ options and prevent log line discarding in certain situations.
      }
 
 
-4.  Widgets should also be designed to be reusable and can be saved in a
+d.  Widgets should also be designed to be reusable and can be saved in a
     widgets folder separately.
 
-# text_input.dart
+ text_input.dart
     
     import 'package:flutter/material.dart';
     
@@ -379,7 +380,7 @@ options and prevent log line discarding in certain situations.
     }
 
 
-5.  Avoid using static or hard-coded strings in UI screens, it is
+e.  Avoid using static or hard-coded strings in UI screens, it is
     recommended to organize them in separate folders or files according
     to their scope.
 
@@ -417,7 +418,7 @@ options and prevent log line discarding in certain situations.
 
  **# Good**
 
- # validators/common_validator.dart
+  validators/common_validator.dart
    
     mixin CommonValidator{
     String? emptyValidator(String value) {
@@ -429,7 +430,7 @@ options and prevent log line discarding in certain situations.
      }
 
 
- #config/themes_colors.dart
+ config/themes_colors.dart
   
     class AppColors{
     static const white=Color(0xffffffff);
@@ -460,13 +461,13 @@ options and prevent log line discarding in certain situations.
     }
 
 
-## **Widget Organization:**
+## **9. Widget Organization:**
 
-1.  Split the widget into different Widgets instead of the same file.
+a.  Split the widget into different Widgets instead of the same file.
 
-2.  use const in widgets
+b.  use const in widgets
 
-3.  When setState() is called on a State, all descendent widgets will
+c.  When setState() is called on a State, all descendent widgets will
     rebuild. Therefore, Split the widget into small widgets so the
     setState() call rebuilds only the part of the subtree, whose UI
     actually needs to change.
@@ -551,9 +552,9 @@ options and prevent log line discarding in certain situations.
     }
 
 
-## **Follow Linting rules**
+## **10. Follow Linting rules**
 
-1.  **DO avoid relative imports for files in lib. Use package imports.**
+a.  **DO avoid relative imports for files in lib. Use package imports.**
     
 **# Bad**
 
@@ -567,9 +568,9 @@ options and prevent log line discarding in certain situations.
      import 'package:coding_guidelines/widgets/button.dart'
      import 'package:coding_guidelines/widgets/custom_tile.dart';
 
-2.  **Avoid empty else statements**
+b.  **Avoid empty else statements**
 
-3.  **Avoid print statements. Use debugPrint or Logger instead**\
+c.  **Avoid print statements. Use debugPrint or Logger instead**\
     
    **# Bad**
 
@@ -592,7 +593,7 @@ options and prevent log line discarding in certain situations.
      }
 
 
-## **Proper state management**
+## **11. Proper state management**
 
 -   Use Riverpod as the recommended package for state management..
 
@@ -601,7 +602,7 @@ options and prevent log line discarding in certain situations.
 
 -   Business logic should be separated from the UI.
 
-## **Using Third-party packages:**
+## **12. Using Third-party packages:**
 
 -   Validate any third-party package being used in the application as
     sometimes it might break the build or not be in sync with the
@@ -657,7 +658,7 @@ options and prevent log line discarding in certain situations.
 
 
 
-## **Testing**
+## **13. Testing**
 
 -   Write unit tests and widget tests to ensure the correctness of your
     code.
@@ -695,7 +696,7 @@ options and prevent log line discarding in certain situations.
           }
 
 
-## **Version Control and Collaboration**
+## **14. Version Control and Collaboration**
 
 -   Use version control systems like Git to track changes and
     collaborate with other developers.
@@ -705,24 +706,24 @@ options and prevent log line discarding in certain situations.
 
 **Github Rules** (by Shohel Rana):
 
-1.  Create a branch
+a.  Create a branch
     -- DEV/BUG-Ticket-No-Ticket Title \[Short Title\]
 
-2.  Commit Message
+b.  Commit Message
     -- DEV/BUG-Ticket-No-Ticket Title [Too Short Title]: Your message
     -- Add a ticket link
     -- Review yourself and add only one label: Initial Review Passed [After reviewed]
 
-3.  Before Commit
+c.  Before Commit
     -- Add In draft or In Progress label (Who does not have access to draft)
 
-4.  Need to add some comments when you reviewed someone's code
+d.  Need to add some comments when you reviewed someone's code
 
-5.  Naming of variables and functions should be meaningful
+e.  Naming of variables and functions should be meaningful
 
-6.  All static data will come from constant.
+f.  All static data will come from constant.
 
-### **Use [Future.wait] to make concurrent API calls:**
+## **15. Use [Future.wait] to make concurrent API calls:**
 
 By using **Future.wait**, you can initiate multiple async tasks at the
 same time. Thereby reducing the overall execution time.
@@ -746,7 +747,7 @@ same time. Thereby reducing the overall execution time.
 
 
 
-### **Avoid mental mapping:**
+## **16. Avoid mental mapping:**
 
 We have a list that contains staff names:
 
@@ -771,7 +772,7 @@ We have a list that contains staff names:
     }
 
 
-**[Data Class helpers:]{.underline}**
+## **17. Data Class helpers:**
 
 **Equatable:**
 
@@ -798,7 +799,7 @@ on writing amazing applications and less on mundane tasks.
     }
 
 
-**Code Generator helper:**
+## **18. Code Generator helper:**
 
 1.  You can use ***Dart Data Class Generator*** by hzgood for generating
     data classes in vsCode.
@@ -810,8 +811,8 @@ on writing amazing applications and less on mundane tasks.
     > Publisher: hzgood
     >
     > VS Marketplace Link:
-    > [[https://marketplace.visualstudio.com/items?itemName=hzgood.dart-data-class-generator]](https://marketplace.visualstudio.com/items?itemName=hzgood.dart-data-class-generator)
-    >
+    > [[https://marketplace.visualstudio.com/items?itemName=ricardo-emerson.dart-data-class-tools]](https://marketplace.visualstudio.com/items?itemName=hzgood.dart-data-class-generator)
+    
     > Using this package you can generate all commonly used components that
     > are used in a data model including formMap, toMap etc. It also
     > supports auto generated null safety.
@@ -828,7 +829,7 @@ on writing amazing applications and less on mundane tasks.
     > VS Marketplace Link:
     > [[https://marketplace.visualstudio.com/items?itemName=robert-brunhage.flutter-riverpod-snippets]](https://marketplace.visualstudio.com/items?itemName=robert-brunhage.flutter-riverpod-snippets)
 
-**SOLID Folder Structure:**
+##**19. SOLID Folder Structure:**
 
      └── lib
          ├── app
