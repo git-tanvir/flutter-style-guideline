@@ -4,7 +4,7 @@
 
 1.  **Classes, enums, typedefs, mixin, and extensions name should in UpperCamelCase**
 
-**# Bad**
+ \color red**# Bad**
 
      class Classname {
      }
