@@ -94,7 +94,7 @@
     }
 
 
-5.  **Proper meaningful names should be followed.**
+5. **Proper meaningful names should be followed.**
     
  **# Bad**
     
@@ -106,11 +106,11 @@
     Color backgroundColor;
     int calculateAge(Date dob);
 
-6.  **Private variable names are preceded with underscores.**
+6. **Private variable names are preceded with underscores.**
 
-        class ClassName {
-         String _variableName;
-        }
+       class ClassName {
+        String _variableName;
+       }
 
 
 ## **Use Nullable operators:**
@@ -324,7 +324,7 @@ options and prevent log line discarding in certain situations.
 3.  Try to make code reusable with the help of helper functions in
     utility files saved in the utils folder.
     
-   # utils.dart
+ # utils.dart
 
      import 'package:intl/intl.dart';
         
@@ -381,7 +381,7 @@ options and prevent log line discarding in certain situations.
     recommended to organize them in separate folders or files according
     to their scope.
 
-    **# Bad**
+**# Bad**
 
          class LoginPage extends StatelessWidget {
          const LoginPage({super.key});
@@ -577,7 +577,7 @@ options and prevent log line discarding in certain situations.
       }
 
 
- # Good
+ **# Good**
 
      void f(int x) {
       debugPrint('debug: $x');
