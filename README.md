@@ -1,6 +1,6 @@
 # flutter-style-guideline
 
-## ** 1. Naming convention:**
+## **1. Naming convention:**
 
 a.  **Classes, enums, typedefs, mixin, and extensions name should in UpperCamelCase**
 
