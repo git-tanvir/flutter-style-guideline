@@ -725,7 +725,7 @@ options and prevent log line discarding in certain situations.
 By using **Future.wait**, you can initiate multiple async tasks at the
 same time. Thereby reducing the overall execution time.
 
-**//# BAD**
+**# BAD**
 
      Future callMultipleApis() async { 
        await getUserInfo(); 
@@ -733,7 +733,7 @@ same time. Thereby reducing the overall execution time.
      }
 
 
-**//# GOOD**
+**# GOOD**
 
      Future callMultipleApis() async { 
        await Future.wait([
